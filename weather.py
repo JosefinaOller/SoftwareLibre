@@ -1,13 +1,15 @@
 #!/usr/bin/env python
 
 import sys, time
-from weatherdaemon import WeatherDaemon
+from daemon import daemon
 
-TOKEN = '7007180975:AAFK3P7eOyonHF5pSj_vStvWrGluN3Fohb8'
-BOT_USERNAME = '@joelcoyos_bot'
+class MyDaemon(daemon):
+	def run(self):
+		while True:
+			time.sleep(1)
 
 if __name__ == "__main__":
-	daemon = WeatherDaemon('/tmp/daemon-example.pid',TOKEN,BOT_USERNAME)
+	daemon = MyDaemon('/tmp/daemon-example.pid')
 	if len(sys.argv) == 2:
 		if 'start' == sys.argv[1]:
 			daemon.start()
