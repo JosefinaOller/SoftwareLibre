@@ -46,7 +46,7 @@ class Weather():
         if location is found - returns the rounded latitude and longitude
         else - returns Location not found
         '''
-        location = message.text
+        location = message
         # Create a geocoder instance
         geolocator = Nominatim(user_agent="my_app")
 
