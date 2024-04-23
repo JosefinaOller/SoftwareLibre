@@ -12,18 +12,17 @@ from weather import Weather
 
 class TelegramWeatherBot():
     def __init__(self):
-        self.config = configparser.ConfigParser()
-        self.config.read('config.ini')
-        self.BOT_TOKEN = self.config.get('Tokens','telegram_token')
-        print(self.BOT_TOKEN)
-        self.WEATHER_TOKEN = self.config.get('Tokens','weather_token')
-        self.bot = telebot.TeleBot(self.BOT_TOKEN)
-        self.weather = Weather(self.WEATHER_TOKEN)
+        config = configparser.ConfigParser()
+        config.read('/etc/Weather/config.ini')
+        bot_token = config.get('Tokens','telegram_token')
+        weather_token = config.get('Tokens','weather_token')
+        self.bot = telebot.TeleBot(bot_token)
+        self.weather = Weather(weather_token)
         self.command_handler()
 
         self.subscribed_dict = {}
 
-        logging.basicConfig(filename='weather.log',
+        logging.basicConfig(filename='/etc/Weather/weather.log',
                     filemode='a',
                     format='%(levelname)s %(asctime)s,%(msecs)d %(name)s %(message)s',
                     datefmt='%H:%M:%S',
@@ -33,10 +32,10 @@ class TelegramWeatherBot():
         self.logger = logging.getLogger(__name__)
 
         self.scheduler = BlockingScheduler()
-        auto_hour = self.config.get('Weather','hour')
-        auto_minute = self.config.get('Weather','minute')
-        #self.scheduler.add_job(self.send_automatic_weather,"cron",hour=auto_hour,min=auto_minute)
-        #self.scheduler.add_job(self.send_automatic_weather,"interval",minutes=1)
+        auto_hour = config.get('Weather','hour')
+        auto_minute = config.get('Weather','minute')
+        #self.scheduler.add_job(self.send_automatic_weather,"cron",hour=auto_hour,minute=auto_minute)
+        self.scheduler.add_job(self.send_automatic_weather,"interval",minutes=1)
         Thread(target=self.schedule_checker).start()
 
         print('Starting...')
@@ -100,5 +99,5 @@ class TelegramWeatherBot():
         '''
         self.bot.reply_to(message, message.text)
 
-weatherbot = TelegramWeatherBot()
+#weatherbot = TelegramWeatherBot()
 #create_config()

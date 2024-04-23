@@ -201,3 +201,87 @@ DEBUG 13:50:57,494 urllib3.connectionpool https://api.telegram.org:443 "POST /bo
 DEBUG 13:50:57,912 urllib3.connectionpool https://api.telegram.org:443 "POST /bot6801086874:AAHeCvum2Rsh0API-nEK41vzuO7zCRR3_KY/sendMessage?chat_id=7154709471&text=%2ATemperatura+de+hoy+ser%C3%A1%3A%2A+12.25%C2%B0C%0A+%2ASensaci%C3%B3n+t%C3%A9rmica%3A%2A+11.85%C2%B0C%0A+%2ATemperatura+m%C3%A1xima%3A%2A+12.25%C2%B0C%0A+%2ATemperatura+m%C3%ADnima%3A%2A+12.25%C2%B0C%0A+%2ADescripci%C3%B3n%3A%2A+cielo+claro%0A&parse_mode=Markdown HTTP/1.1" 200 646
 DEBUG 13:50:58,341 urllib3.connectionpool https://api.telegram.org:443 "POST /bot6801086874:AAHeCvum2Rsh0API-nEK41vzuO7zCRR3_KY/sendPhoto?chat_id=7154709471&photo=https%3A%2F%2Fopenweathermap.org%2Fimg%2Fwn%2F10n%402x.png HTTP/1.1" 200 584
 DEBUG 13:51:15,752 urllib3.connectionpool https://api.telegram.org:443 "GET /bot6801086874:AAHeCvum2Rsh0API-nEK41vzuO7zCRR3_KY/getUpdates?offset=780538077&timeout=20 HTTP/1.1" 200 23
+INFO 15:21:22,245 root Weather Telegram
+DEBUG 15:21:22,246 tzlocal /etc/timezone found, contents:
+ America/Buenos_Aires
+
+DEBUG 15:21:22,246 tzlocal /etc/localtime found
+DEBUG 15:21:22,246 tzlocal 2 found:
+ {'/etc/timezone': 'America/Buenos_Aires', '/etc/localtime is a symlink to': 'America/Argentina/Buenos_Aires'}
+INFO 15:21:28,610 root Weather Telegram
+DEBUG 15:21:28,610 tzlocal /etc/timezone found, contents:
+ America/Buenos_Aires
+
+DEBUG 15:21:28,610 tzlocal /etc/localtime found
+DEBUG 15:21:28,611 tzlocal 2 found:
+ {'/etc/timezone': 'America/Buenos_Aires', '/etc/localtime is a symlink to': 'America/Argentina/Buenos_Aires'}
+INFO 15:23:42,9 root Weather Telegram
+DEBUG 15:23:42,10 tzlocal /etc/timezone found, contents:
+ America/Buenos_Aires
+
+DEBUG 15:23:42,10 tzlocal /etc/localtime found
+DEBUG 15:23:42,11 tzlocal 2 found:
+ {'/etc/timezone': 'America/Buenos_Aires', '/etc/localtime is a symlink to': 'America/Argentina/Buenos_Aires'}
+INFO 15:23:42,12 apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO 15:23:56,466 root Weather Telegram
+DEBUG 15:23:56,466 tzlocal /etc/timezone found, contents:
+ America/Buenos_Aires
+
+DEBUG 15:23:56,467 tzlocal /etc/localtime found
+DEBUG 15:23:56,467 tzlocal 2 found:
+ {'/etc/timezone': 'America/Buenos_Aires', '/etc/localtime is a symlink to': 'America/Argentina/Buenos_Aires'}
+INFO 15:23:56,469 apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO 15:23:56,469 apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO 15:23:56,471 apscheduler.scheduler Added job "TelegramWeatherBot.send_automatic_weather" to job store "default"
+INFO 15:23:56,472 apscheduler.scheduler Added job "TelegramWeatherBot.send_automatic_weather" to job store "default"
+DEBUG 15:23:56,473 urllib3.connectionpool Starting new HTTPS connection (1): api.telegram.org:443
+INFO 15:23:56,473 apscheduler.scheduler Scheduler started
+DEBUG 15:23:56,473 apscheduler.scheduler Looking for jobs to run
+DEBUG 15:23:56,473 apscheduler.scheduler Next wakeup is due at 2024-04-23 15:24:56.469632-03:00 (in 59.995888 seconds)
+DEBUG 15:23:57,299 urllib3.connectionpool https://api.telegram.org:443 "GET /bot6801086874:AAHeCvum2Rsh0API-nEK41vzuO7zCRR3_KY/getMe HTTP/1.1" 200 222
+DEBUG 15:23:57,302 urllib3.connectionpool Starting new HTTPS connection (1): api.telegram.org:443
+ERROR 15:24:01,300 TeleBot Infinity polling: polling exited
+ERROR 15:24:01,300 TeleBot Break infinity polling
+INFO 15:24:04,833 root Weather Telegram
+DEBUG 15:24:04,834 tzlocal /etc/timezone found, contents:
+ America/Buenos_Aires
+
+DEBUG 15:24:04,834 tzlocal /etc/localtime found
+DEBUG 15:24:04,835 tzlocal 2 found:
+ {'/etc/timezone': 'America/Buenos_Aires', '/etc/localtime is a symlink to': 'America/Argentina/Buenos_Aires'}
+INFO 15:24:04,836 apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO 15:24:04,838 apscheduler.scheduler Added job "TelegramWeatherBot.send_automatic_weather" to job store "default"
+INFO 15:24:04,839 apscheduler.scheduler Scheduler started
+DEBUG 15:24:04,839 urllib3.connectionpool Starting new HTTPS connection (1): api.telegram.org:443
+DEBUG 15:24:04,839 apscheduler.scheduler Looking for jobs to run
+DEBUG 15:24:04,840 apscheduler.scheduler Next wakeup is due at 2024-04-23 15:25:04.835962-03:00 (in 59.995824 seconds)
+DEBUG 15:24:05,695 urllib3.connectionpool https://api.telegram.org:443 "GET /bot6801086874:AAHeCvum2Rsh0API-nEK41vzuO7zCRR3_KY/getMe HTTP/1.1" 200 222
+DEBUG 15:24:05,697 urllib3.connectionpool Starting new HTTPS connection (1): api.telegram.org:443
+DEBUG 15:24:10,328 urllib3.connectionpool https://api.telegram.org:443 "GET /bot6801086874:AAHeCvum2Rsh0API-nEK41vzuO7zCRR3_KY/getUpdates?offset=1&timeout=20 HTTP/1.1" 409 143
+ERROR 15:24:10,334 TeleBot Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+ERROR 15:24:10,335 TeleBot Exception traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/telebot/__init__.py", line 1205, in __threaded_polling
+    polling_thread.raise_exceptions()
+  File "/usr/local/lib/python3.11/dist-packages/telebot/util.py", line 111, in raise_exceptions
+    raise self.exception_info
+  File "/usr/local/lib/python3.11/dist-packages/telebot/util.py", line 93, in run
+    task(*args, **kwargs)
+  File "/usr/local/lib/python3.11/dist-packages/telebot/__init__.py", line 675, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/telebot/__init__.py", line 647, in get_updates
+    json_updates = apihelper.get_updates(
+                   ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/telebot/apihelper.py", line 327, in get_updates
+    return _make_request(token, method_url, params=payload)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/telebot/apihelper.py", line 167, in _make_request
+    json_result = _check_result(method_name, result)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/telebot/apihelper.py", line 194, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+ERROR 15:24:14,347 TeleBot Infinity polling: polling exited
+ERROR 15:24:14,347 TeleBot Break infinity polling
