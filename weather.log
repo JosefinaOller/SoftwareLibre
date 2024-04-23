@@ -285,3 +285,37 @@ telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsucc
 
 ERROR 15:24:14,347 TeleBot Infinity polling: polling exited
 ERROR 15:24:14,347 TeleBot Break infinity polling
+INFO 15:37:41,17 root Weather Telegram
+DEBUG 15:37:41,19 tzlocal /etc/timezone found, contents:
+ America/Buenos_Aires
+
+DEBUG 15:37:41,21 tzlocal /etc/localtime found
+DEBUG 15:37:41,24 tzlocal 2 found:
+ {'/etc/timezone': 'America/Buenos_Aires', '/etc/localtime is a symlink to': 'America/Argentina/Buenos_Aires'}
+INFO 15:37:41,28 apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO 15:37:41,32 apscheduler.scheduler Added job "TelegramWeatherBot.send_automatic_weather" to job store "default"
+INFO 15:37:41,32 apscheduler.scheduler Scheduler started
+DEBUG 15:37:41,33 apscheduler.scheduler Looking for jobs to run
+DEBUG 15:37:41,33 apscheduler.scheduler Next wakeup is due at 2024-04-23 15:38:41.027311-03:00 (in 59.994056 seconds)
+DEBUG 15:37:41,38 urllib3.connectionpool Starting new HTTPS connection (1): api.telegram.org:443
+DEBUG 15:37:41,865 urllib3.connectionpool https://api.telegram.org:443 "GET /bot6801086874:AAHeCvum2Rsh0API-nEK41vzuO7zCRR3_KY/getMe HTTP/1.1" 200 222
+DEBUG 15:37:41,869 urllib3.connectionpool Starting new HTTPS connection (1): api.telegram.org:443
+INFO 15:38:03,82 root Weather Telegram
+DEBUG 15:38:03,84 tzlocal /etc/timezone found, contents:
+ America/Buenos_Aires
+
+DEBUG 15:38:03,85 tzlocal /etc/localtime found
+DEBUG 15:38:03,87 tzlocal 2 found:
+ {'/etc/timezone': 'America/Buenos_Aires', '/etc/localtime is a symlink to': 'America/Argentina/Buenos_Aires'}
+INFO 15:38:03,90 apscheduler.scheduler Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO 15:38:03,94 apscheduler.scheduler Added job "TelegramWeatherBot.send_automatic_weather" to job store "default"
+INFO 15:38:03,95 apscheduler.scheduler Scheduler started
+DEBUG 15:38:03,95 apscheduler.scheduler Looking for jobs to run
+DEBUG 15:38:03,97 urllib3.connectionpool Starting new HTTPS connection (1): api.telegram.org:443
+DEBUG 15:38:03,97 apscheduler.scheduler Next wakeup is due at 2024-04-23 15:39:03.089530-03:00 (in 59.991868 seconds)
+DEBUG 15:38:04,29 urllib3.connectionpool https://api.telegram.org:443 "GET /bot6801086874:AAHeCvum2Rsh0API-nEK41vzuO7zCRR3_KY/getMe HTTP/1.1" 200 222
+DEBUG 15:38:04,32 urllib3.connectionpool Starting new HTTPS connection (1): api.telegram.org:443
+DEBUG 15:38:09,673 urllib3.connectionpool https://api.telegram.org:443 "GET /bot6801086874:AAHeCvum2Rsh0API-nEK41vzuO7zCRR3_KY/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 350
+DEBUG 15:38:09,676 urllib3.connectionpool Starting new HTTPS connection (1): api.telegram.org:443
+DEBUG 15:38:10,748 urllib3.connectionpool https://api.telegram.org:443 "POST /bot6801086874:AAHeCvum2Rsh0API-nEK41vzuO7zCRR3_KY/sendMessage?chat_id=7154709471&text=Hola%21%21 HTTP/1.1" 200 241
+INFO 15:38:10,749 root Llego un comando /hola desde 7154709471

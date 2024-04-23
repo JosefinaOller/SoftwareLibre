@@ -13,7 +13,7 @@ from weather import Weather
 class TelegramWeatherBot():
     def __init__(self):
         config = configparser.ConfigParser()
-        config.read('/etc/Weather/config.ini')
+        config.read('config.ini')
         bot_token = config.get('Tokens','telegram_token')
         weather_token = config.get('Tokens','weather_token')
         self.bot = telebot.TeleBot(bot_token)
@@ -22,7 +22,7 @@ class TelegramWeatherBot():
 
         self.subscribed_dict = {}
 
-        logging.basicConfig(filename='/etc/Weather/weather.log',
+        logging.basicConfig(filename='weather.log',
                     filemode='a',
                     format='%(levelname)s %(asctime)s,%(msecs)d %(name)s %(message)s',
                     datefmt='%H:%M:%S',
