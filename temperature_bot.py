@@ -1,130 +1,104 @@
 import os
+from threading import Thread
 import telebot
-import requests
 import logging, logging.config
-from dotenv import load_dotenv
 from geopy.geocoders import Nominatim
+import requests
+from apscheduler.schedulers.blocking import BlockingScheduler
+import configparser
+import syslog
 
-load_dotenv()
+from weather import Weather
 
-BOT_TOKEN = os.environ.get('BOT_TOKEN')
-WEATHER_TOKEN = os.environ.get('WEATHER_TOKEN')
-POLLING_TIMEOUT = None
-bot = telebot.TeleBot(BOT_TOKEN)
-print('Starting...')
+class TelegramWeatherBot():
+    def __init__(self):
+        self.config = configparser.ConfigParser()
+        self.config.read('config.ini')
+        self.BOT_TOKEN = self.config.get('Tokens','telegram_token')
+        print(self.BOT_TOKEN)
+        self.WEATHER_TOKEN = self.config.get('Tokens','weather_token')
+        self.bot = telebot.TeleBot(self.BOT_TOKEN)
+        self.weather = Weather(self.WEATHER_TOKEN)
+        self.command_handler()
 
+        self.subscribed_dict = {}
 
-config = {
-    'disable_existing_loggers': False,
-    'version': 1,
-    'formatters': {
-        'short': {
-            'format': '%(asctime)s %(levelname)s %(message)s',
-        },
-        'long': {
-            'format': '[%(asctime)s] %(levelname)s [%(name)s.%(funcName)s:%(lineno)d] %(message)s'
-        },
-    },
-    'handlers': {
-        'console': {
-            'level': 'DEBUG',
-            'formatter': 'short',
-            'class': 'logging.StreamHandler',
-        },
-    },
-    'loggers': {
-        '': {
-            'handlers': ['console'],
-            'level': 'INFO',
-        },
-        'plugins': {
-            'handlers': ['console'],
-            'level': 'INFO',
-            'propagate': True,
-        }
-    },
-}
-logging.config.dictConfig(config)
-logger = logging.getLogger(__name__)
+        logging.basicConfig(filename='weather.log',
+                    filemode='a',
+                    format='%(levelname)s %(asctime)s,%(msecs)d %(name)s %(message)s',
+                    datefmt='%H:%M:%S',
+                    level=logging.DEBUG)
 
-@bot.message_handler(commands=['hola'])
-def send_welcome(message):
-    
-    bot.send_message(message.chat.id, 'Hola!!')
+        logging.info("Weather Telegram")
+        self.logger = logging.getLogger(__name__)
 
+        self.scheduler = BlockingScheduler()
+        auto_hour = self.config.get('Weather','hour')
+        auto_minute = self.config.get('Weather','minute')
+        #self.scheduler.add_job(self.send_automatic_weather,"cron",hour=auto_hour,min=auto_minute)
+        #self.scheduler.add_job(self.send_automatic_weather,"interval",minutes=1)
+        Thread(target=self.schedule_checker).start()
 
-@bot.message_handler(commands=['clima'])
-def send_weather(message):
-    location = '¿Qué ciudad te interesa? '
-    sent_message = bot.send_message(message.chat.id, location, parse_mode='Markdown')
-    bot.register_next_step_handler(sent_message, fetch_weather)
-    return location
+        print('Starting...')
 
+        print("Starting polling...")
+        self.bot.infinity_polling()
 
-def location_handler(message):
-    '''
-    returns the latitude and longitude coordinated from user's message (location) using the Nominatim geocoder.
-    if location is found - returns the rounded latitude and longitude
-    else - returns Location not found
-    '''
-    location = message.text
-    # Create a geocoder instance
-    geolocator = Nominatim(user_agent="my_app")
+    def schedule_checker(self):
+        while True:
+            self.scheduler.start()
 
-    try:
-        # Get the latitude and longitude
-        location_data = geolocator.geocode(location)
-        latitude = round(location_data.latitude,2)
-        longitude = round(location_data.longitude,2)
-        logger.info("Latitude '%s' and Longitude '%s' found for location '%s'", latitude, longitude, location)
-        return latitude, longitude
-    except AttributeError:
-        logger.exception('Location not found', exc_info=True)
+    def command_handler(self):
+        @self.bot.message_handler(commands=['hola'])
+        def send_welcome(message):
+            self.bot.send_message(message.chat.id, 'Hola!!')
+            logging.info('Llego un comando /hola desde ' + str(message.chat.id))
 
+        @self.bot.message_handler(commands=['clima'])
+        def send_weather(message):
+            location = '¿Qué ciudad te interesa? '
+            logging.info('Llego un comando /clima desde ' + str(message.chat.id))
+            sent_message = self.bot.send_message(message.chat.id, location, parse_mode='Markdown')
+            self.bot.register_next_step_handler(sent_message, callback=self.send_weather)
+            return location
+        
+        @self.bot.message_handler(commands=['auto'])
+        def auto_weather(message):
+            logging.info('Llego un comando /auto desde ' + str(message.chat.id))
+            self.bot.send_message(message.chat.id, 'Te estas subscribiendo al sistema automatico')
+            sent_message = self.bot.send_message(message.chat.id, '¿Qué ciudad te interesa?')
+            self.bot.register_next_step_handler(sent_message, callback=self.subscribe_weather)
+        
+        @self.bot.message_handler(func=lambda msg: True)
+        def echo_all(message):
+            self.bot.send_message(message.chat.id, 'No entendi :(')
 
-def get_weather(latitude,longitude):
-    '''
-    arguments - latitude, longitude
-    takes in arguments as inputs and constructs URL to make API call to OpenWeatherMap API
-    returns a response JSON after fetching weather data for the specified latitude and longitude
-    '''
-    url = 'https://api.openweathermap.org/data/2.5/forecast?lat={}&lon={}&units={}&lang={}&appid={}'.format(latitude, longitude, 'metric', 'es', WEATHER_TOKEN)
-    response = requests.get(url)
-    #print(response.json())
-    return response.json()
+    def send_weather(self,message):
+        logging.info('El usuario selecciono la ciudad ' + str(message.text))
+        weather_message = self.weather.fetch_weather(message.text)
+        self.bot.send_message(message.chat.id, 'Ahí está el clima!')
+        self.bot.send_message(message.chat.id, weather_message, parse_mode='Markdown')
+        url = 'https://openweathermap.org/img/wn/{}@2x.png'.format('10n')
+        self.bot.send_photo(message.chat.id, photo= url)
 
-    
-def fetch_weather(message): 
-    '''
-    called when the user provides location in response to the '/weather' command.
-    uses the 'location_handler' function to get latitude & longitude of the provided location and 'get_weather' function to fetch the weather data
-    extracts weather description from API response and sends to user as message.
-    '''
-    latitude, longitude = location_handler(message)
-    weather = get_weather(latitude,longitude)
-    data = weather['list']
-    data_2 = data[3]
-    info_weather = data_2['weather']
-    info_main= data_2['main']
-    temp= info_main['temp']
-    temp_max= info_main['temp_max']
-    temp_min= info_main['temp_min']
-    feels_like=info_main['feels_like']
-    data_3 = info_weather[0]
-    description = data_3['description']
-    icon = data_3['icon']
-    weather_message = f'*Temperatura de hoy será:* {temp}°C\n *Sensación térmica:* {feels_like}°C\n *Temperatura máxima:* {temp_max}°C\n *Temperatura mínima:* {temp_min}°C\n *Descripción:* {description}\n'
-    bot.send_message(message.chat.id, 'Ahí está el clima!')
-    bot.send_message(message.chat.id, weather_message, parse_mode='Markdown')
-    url = 'https://openweathermap.org/img/wn/{}@2x.png' .format(icon)
-    bot.send_photo(message.chat.id, photo= url)
+    def send_automatic_weather(self):
+        for chat_id,location in self.subscribed_dict.items():
+            weather_message = self.weather.fetch_weather(location)
+            self.bot.send_message(chat_id, 'Ahí está el clima!')
+            self.bot.send_message(chat_id, weather_message, parse_mode='Markdown')
+            url = 'https://openweathermap.org/img/wn/{}@2x.png'.format('10n')
+            self.bot.send_photo(chat_id, photo= url)
 
+    def subscribe_weather(self,message):
+        logging.info('El usuario se suscribio a la ciudad ' + str(message.text))
+        self.subscribed_dict[message.chat.id] = message.text
+        self.bot.send_message(message.chat.id, 'Te subscribiste al sistema automatico!')
 
-@bot.message_handler(func=lambda msg: True)
-def echo_all(message):
-    '''
-    echoes back any other messages bot receives from user
-    '''
-    bot.reply_to(message, message.text)
+    def echo_all(self,message):
+        '''
+        echoes back any other messages bot receives from user
+        '''
+        self.bot.reply_to(message, message.text)
 
-bot.infinity_polling()
+weatherbot = TelegramWeatherBot()
+#create_config()
