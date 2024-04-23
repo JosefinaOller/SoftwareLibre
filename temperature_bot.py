@@ -83,7 +83,7 @@ class TelegramWeatherBot():
         @self.bot.message_handler(commands=['auto'])
         def auto_weather(message):
             self.bot.send_message(message.chat.id, 'Te estas subscribiendo al sistema automatico')
-            sent_message = self.bot.send_message(message.chat.id, 'Que ciudad te interesa?')
+            sent_message = self.bot.send_message(message.chat.id, '¿Qué ciudad te interesa?')
             self.bot.register_next_step_handler(sent_message, callback=self.subscribe_weather)
         
         @self.bot.message_handler(func=lambda msg: True)
