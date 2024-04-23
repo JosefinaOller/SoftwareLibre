@@ -5,58 +5,38 @@ import logging, logging.config
 from geopy.geocoders import Nominatim
 import requests
 from apscheduler.schedulers.blocking import BlockingScheduler
+import configparser
+import syslog
 
 from weather import Weather
 
-from dotenv import load_dotenv
-
 class TelegramWeatherBot():
     def __init__(self):
-        self.BOT_TOKEN = '6801086874:AAHeCvum2Rsh0API-nEK41vzuO7zCRR3_KY'
-        self.WEATHER_TOKEN = '03073a99421b1d8b922aa51d4b1b9be8'
-        self.POLLING_TIMEOUT = None
+        self.config = configparser.ConfigParser()
+        self.config.read('config.ini')
+        self.BOT_TOKEN = self.config.get('Tokens','telegram_token')
+        print(self.BOT_TOKEN)
+        self.WEATHER_TOKEN = self.config.get('Tokens','weather_token')
         self.bot = telebot.TeleBot(self.BOT_TOKEN)
         self.weather = Weather(self.WEATHER_TOKEN)
         self.command_handler()
 
         self.subscribed_dict = {}
 
-        config = {
-            'disable_existing_loggers': False,
-            'version': 1,
-            'formatters': {
-                'short': {
-                    'format': '%(asctime)s %(levelname)s %(message)s',
-                },
-                'long': {
-                    'format': '[%(asctime)s] %(levelname)s [%(name)s.%(funcName)s:%(lineno)d] %(message)s'
-                },
-            },
-            'handlers': {
-                'console': {
-                    'level': 'DEBUG',
-                    'formatter': 'short',
-                    'class': 'logging.StreamHandler',
-                },
-            },
-            'loggers': {
-                '': {
-                    'handlers': ['console'],
-                    'level': 'INFO',
-                },
-                'plugins': {
-                    'handlers': ['console'],
-                    'level': 'INFO',
-                    'propagate': True,
-                }
-            },
-        }
-        logging.config.dictConfig(config)
+        logging.basicConfig(filename='weather.log',
+                    filemode='a',
+                    format='%(levelname)s %(asctime)s,%(msecs)d %(name)s %(message)s',
+                    datefmt='%H:%M:%S',
+                    level=logging.DEBUG)
+
+        logging.info("Weather Telegram")
         self.logger = logging.getLogger(__name__)
 
         self.scheduler = BlockingScheduler()
-        #self.scheduler.add_job(self.send_automatic_weather,"cron",hour=10,min=40)
-        self.scheduler.add_job(self.send_automatic_weather,"interval",minutes=1)
+        auto_hour = self.config.get('Weather','hour')
+        auto_minute = self.config.get('Weather','minute')
+        #self.scheduler.add_job(self.send_automatic_weather,"cron",hour=auto_hour,min=auto_minute)
+        #self.scheduler.add_job(self.send_automatic_weather,"interval",minutes=1)
         Thread(target=self.schedule_checker).start()
 
         print('Starting...')
@@ -72,16 +52,19 @@ class TelegramWeatherBot():
         @self.bot.message_handler(commands=['hola'])
         def send_welcome(message):
             self.bot.send_message(message.chat.id, 'Hola!!')
+            logging.info('Llego un comando /hola desde ' + str(message.chat.id))
 
         @self.bot.message_handler(commands=['clima'])
         def send_weather(message):
             location = '¿Qué ciudad te interesa? '
+            logging.info('Llego un comando /clima desde ' + str(message.chat.id))
             sent_message = self.bot.send_message(message.chat.id, location, parse_mode='Markdown')
             self.bot.register_next_step_handler(sent_message, callback=self.send_weather)
             return location
         
         @self.bot.message_handler(commands=['auto'])
         def auto_weather(message):
+            logging.info('Llego un comando /auto desde ' + str(message.chat.id))
             self.bot.send_message(message.chat.id, 'Te estas subscribiendo al sistema automatico')
             sent_message = self.bot.send_message(message.chat.id, '¿Qué ciudad te interesa?')
             self.bot.register_next_step_handler(sent_message, callback=self.subscribe_weather)
@@ -91,6 +74,7 @@ class TelegramWeatherBot():
             self.bot.send_message(message.chat.id, 'No entendi :(')
 
     def send_weather(self,message):
+        logging.info('El usuario selecciono la ciudad ' + str(message.text))
         weather_message = self.weather.fetch_weather(message.text)
         self.bot.send_message(message.chat.id, 'Ahí está el clima!')
         self.bot.send_message(message.chat.id, weather_message, parse_mode='Markdown')
@@ -106,10 +90,9 @@ class TelegramWeatherBot():
             self.bot.send_photo(chat_id, photo= url)
 
     def subscribe_weather(self,message):
+        logging.info('El usuario se suscribio a la ciudad ' + str(message.text))
         self.subscribed_dict[message.chat.id] = message.text
         self.bot.send_message(message.chat.id, 'Te subscribiste al sistema automatico!')
-
-
 
     def echo_all(self,message):
         '''
@@ -117,4 +100,5 @@ class TelegramWeatherBot():
         '''
         self.bot.reply_to(message, message.text)
 
-#weatherbot = TelegramWeatherBot()
+weatherbot = TelegramWeatherBot()
+#create_config()

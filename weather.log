@@ -1,0 +1,203 @@
+13:40:49,824 root INFO Weather Telegram
+13:40:49,824 tzlocal DEBUG /etc/timezone found, contents:
+ America/Buenos_Aires
+
+13:40:49,824 tzlocal DEBUG /etc/localtime found
+13:40:49,825 tzlocal DEBUG 2 found:
+ {'/etc/timezone': 'America/Buenos_Aires', '/etc/localtime is a symlink to': 'America/Argentina/Buenos_Aires'}
+13:40:49,827 apscheduler.scheduler INFO Scheduler started
+13:40:49,828 apscheduler.scheduler DEBUG Looking for jobs to run
+13:40:49,828 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): api.telegram.org:443
+13:40:49,828 apscheduler.scheduler DEBUG No jobs; waiting until a job is added
+13:40:50,717 urllib3.connectionpool DEBUG https://api.telegram.org:443 "GET /bot6801086874:AAHeCvum2Rsh0API-nEK41vzuO7zCRR3_KY/getMe HTTP/1.1" 200 222
+13:40:50,720 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): api.telegram.org:443
+13:41:11,620 urllib3.connectionpool DEBUG https://api.telegram.org:443 "GET /bot6801086874:AAHeCvum2Rsh0API-nEK41vzuO7zCRR3_KY/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 23
+13:41:14,211 urllib3.connectionpool DEBUG https://api.telegram.org:443 "GET /bot6801086874:AAHeCvum2Rsh0API-nEK41vzuO7zCRR3_KY/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 350
+13:41:14,214 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): api.telegram.org:443
+13:41:15,205 urllib3.connectionpool DEBUG https://api.telegram.org:443 "POST /bot6801086874:AAHeCvum2Rsh0API-nEK41vzuO7zCRR3_KY/sendMessage?chat_id=7154709471&text=Hola%21%21 HTTP/1.1" 200 241
+13:41:15,205 root INFO Llego un mensaje!!!
+13:41:34,489 urllib3.connectionpool DEBUG https://api.telegram.org:443 "GET /bot6801086874:AAHeCvum2Rsh0API-nEK41vzuO7zCRR3_KY/getUpdates?offset=780538066&timeout=20 HTTP/1.1" 200 23
+13:41:54,766 urllib3.connectionpool DEBUG https://api.telegram.org:443 "GET /bot6801086874:AAHeCvum2Rsh0API-nEK41vzuO7zCRR3_KY/getUpdates?offset=780538066&timeout=20 HTTP/1.1" 200 23
+13:42:15,42 urllib3.connectionpool DEBUG https://api.telegram.org:443 "GET /bot6801086874:AAHeCvum2Rsh0API-nEK41vzuO7zCRR3_KY/getUpdates?offset=780538066&timeout=20 HTTP/1.1" 200 23
+13:42:35,317 urllib3.connectionpool DEBUG https://api.telegram.org:443 "GET /bot6801086874:AAHeCvum2Rsh0API-nEK41vzuO7zCRR3_KY/getUpdates?offset=780538066&timeout=20 HTTP/1.1" 200 23
+13:42:55,592 urllib3.connectionpool DEBUG https://api.telegram.org:443 "GET /bot6801086874:AAHeCvum2Rsh0API-nEK41vzuO7zCRR3_KY/getUpdates?offset=780538066&timeout=20 HTTP/1.1" 200 23
+13:43:15,867 urllib3.connectionpool DEBUG https://api.telegram.org:443 "GET /bot6801086874:AAHeCvum2Rsh0API-nEK41vzuO7zCRR3_KY/getUpdates?offset=780538066&timeout=20 HTTP/1.1" 200 23
+13:43:36,145 urllib3.connectionpool DEBUG https://api.telegram.org:443 "GET /bot6801086874:AAHeCvum2Rsh0API-nEK41vzuO7zCRR3_KY/getUpdates?offset=780538066&timeout=20 HTTP/1.1" 200 23
+13:43:56,422 urllib3.connectionpool DEBUG https://api.telegram.org:443 "GET /bot6801086874:AAHeCvum2Rsh0API-nEK41vzuO7zCRR3_KY/getUpdates?offset=780538066&timeout=20 HTTP/1.1" 200 23
+13:44:16,699 urllib3.connectionpool DEBUG https://api.telegram.org:443 "GET /bot6801086874:AAHeCvum2Rsh0API-nEK41vzuO7zCRR3_KY/getUpdates?offset=780538066&timeout=20 HTTP/1.1" 200 23
+13:44:36,975 urllib3.connectionpool DEBUG https://api.telegram.org:443 "GET /bot6801086874:AAHeCvum2Rsh0API-nEK41vzuO7zCRR3_KY/getUpdates?offset=780538066&timeout=20 HTTP/1.1" 200 23
+13:44:57,250 urllib3.connectionpool DEBUG https://api.telegram.org:443 "GET /bot6801086874:AAHeCvum2Rsh0API-nEK41vzuO7zCRR3_KY/getUpdates?offset=780538066&timeout=20 HTTP/1.1" 200 23
+13:45:17,525 urllib3.connectionpool DEBUG https://api.telegram.org:443 "GET /bot6801086874:AAHeCvum2Rsh0API-nEK41vzuO7zCRR3_KY/getUpdates?offset=780538066&timeout=20 HTTP/1.1" 200 23
+13:45:37,800 urllib3.connectionpool DEBUG https://api.telegram.org:443 "GET /bot6801086874:AAHeCvum2Rsh0API-nEK41vzuO7zCRR3_KY/getUpdates?offset=780538066&timeout=20 HTTP/1.1" 200 23
+13:45:38,519 TeleBot ERROR Infinity polling: polling exited
+13:45:38,519 TeleBot ERROR Break infinity polling
+13:45:40,385 root INFO Weather Telegram
+13:45:40,385 tzlocal DEBUG /etc/timezone found, contents:
+ America/Buenos_Aires
+
+13:45:40,385 tzlocal DEBUG /etc/localtime found
+13:45:40,386 tzlocal DEBUG 2 found:
+ {'/etc/timezone': 'America/Buenos_Aires', '/etc/localtime is a symlink to': 'America/Argentina/Buenos_Aires'}
+13:45:40,388 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): api.telegram.org:443
+13:45:40,388 apscheduler.scheduler INFO Scheduler started
+13:45:40,389 apscheduler.scheduler DEBUG Looking for jobs to run
+13:45:40,389 apscheduler.scheduler DEBUG No jobs; waiting until a job is added
+13:45:41,194 urllib3.connectionpool DEBUG https://api.telegram.org:443 "GET /bot6801086874:AAHeCvum2Rsh0API-nEK41vzuO7zCRR3_KY/getMe HTTP/1.1" 200 222
+13:45:41,198 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): api.telegram.org:443
+13:45:44,67 urllib3.connectionpool DEBUG https://api.telegram.org:443 "GET /bot6801086874:AAHeCvum2Rsh0API-nEK41vzuO7zCRR3_KY/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 350
+13:45:44,69 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): api.telegram.org:443
+13:45:45,0 urllib3.connectionpool DEBUG https://api.telegram.org:443 "POST /bot6801086874:AAHeCvum2Rsh0API-nEK41vzuO7zCRR3_KY/sendMessage?chat_id=7154709471&text=Hola%21%21 HTTP/1.1" 200 241
+13:45:45,8 TeleBot ERROR Infinity polling exception: can only concatenate str (not "int") to str
+13:45:45,11 TeleBot ERROR Exception traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/telebot/__init__.py", line 1081, in infinity_polling
+    self.polling(non_stop=True, timeout=timeout, long_polling_timeout=long_polling_timeout,
+  File "/usr/local/lib/python3.11/dist-packages/telebot/__init__.py", line 1169, in polling
+    self.__threaded_polling(non_stop=non_stop, interval=interval, timeout=timeout, long_polling_timeout=long_polling_timeout,
+  File "/usr/local/lib/python3.11/dist-packages/telebot/__init__.py", line 1244, in __threaded_polling
+    raise e
+  File "/usr/local/lib/python3.11/dist-packages/telebot/__init__.py", line 1206, in __threaded_polling
+    self.worker_pool.raise_exceptions()
+  File "/usr/local/lib/python3.11/dist-packages/telebot/util.py", line 150, in raise_exceptions
+    raise self.exception_info
+  File "/usr/local/lib/python3.11/dist-packages/telebot/util.py", line 93, in run
+    task(*args, **kwargs)
+  File "/usr/local/lib/python3.11/dist-packages/telebot/__init__.py", line 8404, in _run_middlewares_and_handler
+    result = handler['function'](message)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/joelcoyos/Documentos/GitHub/SSL-TP1/temperature_bot.py", line 55, in send_welcome
+    logging.info('Llego un comando /hola desde' + message.chat.id)
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+TypeError: can only concatenate str (not "int") to str
+
+13:45:48,14 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): api.telegram.org:443
+13:45:48,853 urllib3.connectionpool DEBUG https://api.telegram.org:443 "GET /bot6801086874:AAHeCvum2Rsh0API-nEK41vzuO7zCRR3_KY/getUpdates?offset=780538067&timeout=20 HTTP/1.1" 409 143
+13:46:08,828 urllib3.connectionpool DEBUG https://api.telegram.org:443 "GET /bot6801086874:AAHeCvum2Rsh0API-nEK41vzuO7zCRR3_KY/getUpdates?offset=780538067&timeout=20 HTTP/1.1" 200 23
+13:46:13,898 TeleBot ERROR Infinity polling: polling exited
+13:46:13,899 TeleBot ERROR Break infinity polling
+13:46:15,545 root INFO Weather Telegram
+13:46:15,545 tzlocal DEBUG /etc/timezone found, contents:
+ America/Buenos_Aires
+
+13:46:15,545 tzlocal DEBUG /etc/localtime found
+13:46:15,546 tzlocal DEBUG 2 found:
+ {'/etc/timezone': 'America/Buenos_Aires', '/etc/localtime is a symlink to': 'America/Argentina/Buenos_Aires'}
+13:46:15,547 apscheduler.scheduler INFO Scheduler started
+13:46:15,548 apscheduler.scheduler DEBUG Looking for jobs to run
+13:46:15,549 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): api.telegram.org:443
+13:46:15,549 apscheduler.scheduler DEBUG No jobs; waiting until a job is added
+13:46:16,413 urllib3.connectionpool DEBUG https://api.telegram.org:443 "GET /bot6801086874:AAHeCvum2Rsh0API-nEK41vzuO7zCRR3_KY/getMe HTTP/1.1" 200 222
+13:46:16,416 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): api.telegram.org:443
+13:46:18,704 urllib3.connectionpool DEBUG https://api.telegram.org:443 "GET /bot6801086874:AAHeCvum2Rsh0API-nEK41vzuO7zCRR3_KY/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 350
+13:46:18,708 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): api.telegram.org:443
+13:46:19,744 urllib3.connectionpool DEBUG https://api.telegram.org:443 "POST /bot6801086874:AAHeCvum2Rsh0API-nEK41vzuO7zCRR3_KY/sendMessage?chat_id=7154709471&text=Hola%21%21 HTTP/1.1" 200 241
+13:46:19,744 root INFO Llego un comando /hola desde7154709471
+13:46:36,606 urllib3.connectionpool DEBUG https://api.telegram.org:443 "GET /bot6801086874:AAHeCvum2Rsh0API-nEK41vzuO7zCRR3_KY/getUpdates?offset=780538068&timeout=20 HTTP/1.1" 200 351
+13:46:36,607 root INFO Llego un comando /clima desde7154709471
+13:46:37,12 urllib3.connectionpool DEBUG https://api.telegram.org:443 "POST /bot6801086874:AAHeCvum2Rsh0API-nEK41vzuO7zCRR3_KY/sendMessage?chat_id=7154709471&text=%C2%BFQu%C3%A9+ciudad+te+interesa%3F+&parse_mode=Markdown HTTP/1.1" 200 269
+13:46:41,501 urllib3.connectionpool DEBUG https://api.telegram.org:443 "GET /bot6801086874:AAHeCvum2Rsh0API-nEK41vzuO7zCRR3_KY/getUpdates?offset=780538069&timeout=20 HTTP/1.1" 200 300
+13:46:41,545 urllib3.util.retry DEBUG Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+13:46:41,545 urllib3.util.retry DEBUG Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+13:46:41,545 geopy DEBUG Nominatim.geocode: https://nominatim.openstreetmap.org/search?q=Mar+del+Plata&format=json&limit=1
+13:46:41,546 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): nominatim.openstreetmap.org:443
+13:46:42,542 urllib3.connectionpool DEBUG https://nominatim.openstreetmap.org:443 "GET /search?q=Mar+del+Plata&format=json&limit=1 HTTP/1.1" 200 445
+13:46:42,547 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): api.openweathermap.org:443
+13:46:44,422 urllib3.connectionpool DEBUG https://api.openweathermap.org:443 "GET /data/2.5/forecast?lat=-34.53&lon=-54.06&units=metric&lang=es&appid=03073a99421b1d8b922aa51d4b1b9be8 HTTP/1.1" 200 16045
+13:46:44,839 urllib3.connectionpool DEBUG https://api.telegram.org:443 "POST /bot6801086874:AAHeCvum2Rsh0API-nEK41vzuO7zCRR3_KY/sendMessage?chat_id=7154709471&text=Ah%C3%AD+est%C3%A1+el+clima%21 HTTP/1.1" 200 263
+13:46:45,279 urllib3.connectionpool DEBUG https://api.telegram.org:443 "POST /bot6801086874:AAHeCvum2Rsh0API-nEK41vzuO7zCRR3_KY/sendMessage?chat_id=7154709471&text=%2ATemperatura+de+hoy+ser%C3%A1%3A%2A+12.25%C2%B0C%0A+%2ASensaci%C3%B3n+t%C3%A9rmica%3A%2A+11.85%C2%B0C%0A+%2ATemperatura+m%C3%A1xima%3A%2A+12.25%C2%B0C%0A+%2ATemperatura+m%C3%ADnima%3A%2A+12.25%C2%B0C%0A+%2ADescripci%C3%B3n%3A%2A+cielo+claro%0A&parse_mode=Markdown HTTP/1.1" 200 646
+13:46:45,737 urllib3.connectionpool DEBUG https://api.telegram.org:443 "POST /bot6801086874:AAHeCvum2Rsh0API-nEK41vzuO7zCRR3_KY/sendPhoto?chat_id=7154709471&photo=https%3A%2F%2Fopenweathermap.org%2Fimg%2Fwn%2F10n%402x.png HTTP/1.1" 200 584
+13:47:01,784 urllib3.connectionpool DEBUG https://api.telegram.org:443 "GET /bot6801086874:AAHeCvum2Rsh0API-nEK41vzuO7zCRR3_KY/getUpdates?offset=780538070&timeout=20 HTTP/1.1" 200 23
+13:47:22,67 urllib3.connectionpool DEBUG https://api.telegram.org:443 "GET /bot6801086874:AAHeCvum2Rsh0API-nEK41vzuO7zCRR3_KY/getUpdates?offset=780538070&timeout=20 HTTP/1.1" 200 23
+13:47:42,358 urllib3.connectionpool DEBUG https://api.telegram.org:443 "GET /bot6801086874:AAHeCvum2Rsh0API-nEK41vzuO7zCRR3_KY/getUpdates?offset=780538070&timeout=20 HTTP/1.1" 200 23
+13:48:02,645 urllib3.connectionpool DEBUG https://api.telegram.org:443 "GET /bot6801086874:AAHeCvum2Rsh0API-nEK41vzuO7zCRR3_KY/getUpdates?offset=780538070&timeout=20 HTTP/1.1" 200 23
+13:48:22,927 urllib3.connectionpool DEBUG https://api.telegram.org:443 "GET /bot6801086874:AAHeCvum2Rsh0API-nEK41vzuO7zCRR3_KY/getUpdates?offset=780538070&timeout=20 HTTP/1.1" 200 23
+13:48:43,208 urllib3.connectionpool DEBUG https://api.telegram.org:443 "GET /bot6801086874:AAHeCvum2Rsh0API-nEK41vzuO7zCRR3_KY/getUpdates?offset=780538070&timeout=20 HTTP/1.1" 200 23
+13:49:03,488 urllib3.connectionpool DEBUG https://api.telegram.org:443 "GET /bot6801086874:AAHeCvum2Rsh0API-nEK41vzuO7zCRR3_KY/getUpdates?offset=780538070&timeout=20 HTTP/1.1" 200 23
+13:49:23,772 urllib3.connectionpool DEBUG https://api.telegram.org:443 "GET /bot6801086874:AAHeCvum2Rsh0API-nEK41vzuO7zCRR3_KY/getUpdates?offset=780538070&timeout=20 HTTP/1.1" 200 23
+13:49:37,766 TeleBot ERROR Infinity polling: polling exited
+13:49:37,766 TeleBot ERROR Break infinity polling
+INFO 13:49:39,394 root Weather Telegram
+DEBUG 13:49:39,394 tzlocal /etc/timezone found, contents:
+ America/Buenos_Aires
+
+DEBUG 13:49:39,394 tzlocal /etc/localtime found
+DEBUG 13:49:39,395 tzlocal 2 found:
+ {'/etc/timezone': 'America/Buenos_Aires', '/etc/localtime is a symlink to': 'America/Argentina/Buenos_Aires'}
+INFO 13:49:39,397 apscheduler.scheduler Scheduler started
+DEBUG 13:49:39,398 urllib3.connectionpool Starting new HTTPS connection (1): api.telegram.org:443
+DEBUG 13:49:39,398 apscheduler.scheduler Looking for jobs to run
+DEBUG 13:49:39,398 apscheduler.scheduler No jobs; waiting until a job is added
+DEBUG 13:49:40,219 urllib3.connectionpool https://api.telegram.org:443 "GET /bot6801086874:AAHeCvum2Rsh0API-nEK41vzuO7zCRR3_KY/getMe HTTP/1.1" 200 222
+DEBUG 13:49:40,222 urllib3.connectionpool Starting new HTTPS connection (1): api.telegram.org:443
+DEBUG 13:49:43,344 urllib3.connectionpool https://api.telegram.org:443 "GET /bot6801086874:AAHeCvum2Rsh0API-nEK41vzuO7zCRR3_KY/getUpdates?offset=1&timeout=20 HTTP/1.1" 200 350
+DEBUG 13:49:43,348 urllib3.connectionpool Starting new HTTPS connection (1): api.telegram.org:443
+DEBUG 13:49:44,400 urllib3.connectionpool https://api.telegram.org:443 "POST /bot6801086874:AAHeCvum2Rsh0API-nEK41vzuO7zCRR3_KY/sendMessage?chat_id=7154709471&text=Hola%21%21 HTTP/1.1" 200 241
+INFO 13:49:44,401 root Llego un comando /hola desde 7154709471
+DEBUG 13:50:03,601 urllib3.connectionpool https://api.telegram.org:443 "GET /bot6801086874:AAHeCvum2Rsh0API-nEK41vzuO7zCRR3_KY/getUpdates?offset=780538071&timeout=20 HTTP/1.1" 200 23
+DEBUG 13:50:10,146 urllib3.connectionpool https://api.telegram.org:443 "GET /bot6801086874:AAHeCvum2Rsh0API-nEK41vzuO7zCRR3_KY/getUpdates?offset=780538071&timeout=20 HTTP/1.1" 200 351
+INFO 13:50:10,147 root Llego un comando /clima desde 7154709471
+DEBUG 13:50:10,151 urllib3.connectionpool Starting new HTTPS connection (1): api.telegram.org:443
+DEBUG 13:50:11,278 urllib3.connectionpool https://api.telegram.org:443 "POST /bot6801086874:AAHeCvum2Rsh0API-nEK41vzuO7zCRR3_KY/sendMessage?chat_id=7154709471&text=%C2%BFQu%C3%A9+ciudad+te+interesa%3F+&parse_mode=Markdown HTTP/1.1" 200 269
+DEBUG 13:50:13,365 urllib3.connectionpool https://api.telegram.org:443 "GET /bot6801086874:AAHeCvum2Rsh0API-nEK41vzuO7zCRR3_KY/getUpdates?offset=780538072&timeout=20 HTTP/1.1" 200 300
+INFO 13:50:13,366 root El usuario selecciono la ciudad Mar del Plata
+DEBUG 13:50:13,441 urllib3.util.retry Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+DEBUG 13:50:13,441 urllib3.util.retry Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+DEBUG 13:50:13,442 geopy Nominatim.geocode: https://nominatim.openstreetmap.org/search?q=Mar+del+Plata&format=json&limit=1
+DEBUG 13:50:13,443 urllib3.connectionpool Starting new HTTPS connection (1): nominatim.openstreetmap.org:443
+DEBUG 13:50:14,205 urllib3.connectionpool https://nominatim.openstreetmap.org:443 "GET /search?q=Mar+del+Plata&format=json&limit=1 HTTP/1.1" 200 445
+DEBUG 13:50:14,209 urllib3.connectionpool Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG 13:50:15,121 urllib3.connectionpool https://api.openweathermap.org:443 "GET /data/2.5/forecast?lat=-34.53&lon=-54.06&units=metric&lang=es&appid=03073a99421b1d8b922aa51d4b1b9be8 HTTP/1.1" 200 16045
+DEBUG 13:50:15,526 urllib3.connectionpool https://api.telegram.org:443 "POST /bot6801086874:AAHeCvum2Rsh0API-nEK41vzuO7zCRR3_KY/sendMessage?chat_id=7154709471&text=Ah%C3%AD+est%C3%A1+el+clima%21 HTTP/1.1" 200 263
+DEBUG 13:50:15,948 urllib3.connectionpool https://api.telegram.org:443 "POST /bot6801086874:AAHeCvum2Rsh0API-nEK41vzuO7zCRR3_KY/sendMessage?chat_id=7154709471&text=%2ATemperatura+de+hoy+ser%C3%A1%3A%2A+12.25%C2%B0C%0A+%2ASensaci%C3%B3n+t%C3%A9rmica%3A%2A+11.85%C2%B0C%0A+%2ATemperatura+m%C3%A1xima%3A%2A+12.25%C2%B0C%0A+%2ATemperatura+m%C3%ADnima%3A%2A+12.25%C2%B0C%0A+%2ADescripci%C3%B3n%3A%2A+cielo+claro%0A&parse_mode=Markdown HTTP/1.1" 200 646
+DEBUG 13:50:16,359 urllib3.connectionpool https://api.telegram.org:443 "POST /bot6801086874:AAHeCvum2Rsh0API-nEK41vzuO7zCRR3_KY/sendPhoto?chat_id=7154709471&photo=https%3A%2F%2Fopenweathermap.org%2Fimg%2Fwn%2F10n%402x.png HTTP/1.1" 200 584
+DEBUG 13:50:32,715 urllib3.connectionpool https://api.telegram.org:443 "GET /bot6801086874:AAHeCvum2Rsh0API-nEK41vzuO7zCRR3_KY/getUpdates?offset=780538073&timeout=20 HTTP/1.1" 200 351
+INFO 13:50:32,716 root Llego un comando /clima desde 7154709471
+DEBUG 13:50:33,132 urllib3.connectionpool https://api.telegram.org:443 "POST /bot6801086874:AAHeCvum2Rsh0API-nEK41vzuO7zCRR3_KY/sendMessage?chat_id=7154709471&text=%C2%BFQu%C3%A9+ciudad+te+interesa%3F+&parse_mode=Markdown HTTP/1.1" 200 269
+DEBUG 13:50:38,461 urllib3.connectionpool https://api.telegram.org:443 "GET /bot6801086874:AAHeCvum2Rsh0API-nEK41vzuO7zCRR3_KY/getUpdates?offset=780538074&timeout=20 HTTP/1.1" 200 305
+INFO 13:50:38,463 root El usuario selecciono la ciudad Mar del las Pompas
+DEBUG 13:50:38,539 urllib3.util.retry Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+DEBUG 13:50:38,539 urllib3.util.retry Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+DEBUG 13:50:38,540 geopy Nominatim.geocode: https://nominatim.openstreetmap.org/search?q=Mar+del+las+Pompas&format=json&limit=1
+DEBUG 13:50:38,541 urllib3.connectionpool Starting new HTTPS connection (1): nominatim.openstreetmap.org:443
+DEBUG 13:50:39,530 urllib3.connectionpool https://nominatim.openstreetmap.org:443 "GET /search?q=Mar+del+las+Pompas&format=json&limit=1 HTTP/1.1" 200 2
+ERROR 13:50:39,533 TeleBot Infinity polling exception: cannot unpack non-iterable NoneType object
+ERROR 13:50:39,539 TeleBot Exception traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/telebot/__init__.py", line 1081, in infinity_polling
+    self.polling(non_stop=True, timeout=timeout, long_polling_timeout=long_polling_timeout,
+  File "/usr/local/lib/python3.11/dist-packages/telebot/__init__.py", line 1169, in polling
+    self.__threaded_polling(non_stop=non_stop, interval=interval, timeout=timeout, long_polling_timeout=long_polling_timeout,
+  File "/usr/local/lib/python3.11/dist-packages/telebot/__init__.py", line 1244, in __threaded_polling
+    raise e
+  File "/usr/local/lib/python3.11/dist-packages/telebot/__init__.py", line 1206, in __threaded_polling
+    self.worker_pool.raise_exceptions()
+  File "/usr/local/lib/python3.11/dist-packages/telebot/util.py", line 150, in raise_exceptions
+    raise self.exception_info
+  File "/usr/local/lib/python3.11/dist-packages/telebot/util.py", line 93, in run
+    task(*args, **kwargs)
+  File "/home/joelcoyos/Documentos/GitHub/SSL-TP1/temperature_bot.py", line 78, in send_weather
+    weather_message = self.weather.fetch_weather(message.text)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/joelcoyos/Documentos/GitHub/SSL-TP1/weather.py", line 26, in fetch_weather
+    latitude, longitude = self.location_handler(message)
+    ^^^^^^^^^^^^^^^^^^^
+TypeError: cannot unpack non-iterable NoneType object
+
+DEBUG 13:50:42,542 urllib3.connectionpool Starting new HTTPS connection (1): api.telegram.org:443
+DEBUG 13:50:43,376 urllib3.connectionpool https://api.telegram.org:443 "GET /bot6801086874:AAHeCvum2Rsh0API-nEK41vzuO7zCRR3_KY/getUpdates?offset=780538075&timeout=20 HTTP/1.1" 409 143
+DEBUG 13:50:52,563 urllib3.connectionpool https://api.telegram.org:443 "GET /bot6801086874:AAHeCvum2Rsh0API-nEK41vzuO7zCRR3_KY/getUpdates?offset=780538075&timeout=20 HTTP/1.1" 200 351
+INFO 13:50:52,564 root Llego un comando /clima desde 7154709471
+DEBUG 13:50:52,968 urllib3.connectionpool https://api.telegram.org:443 "POST /bot6801086874:AAHeCvum2Rsh0API-nEK41vzuO7zCRR3_KY/sendMessage?chat_id=7154709471&text=%C2%BFQu%C3%A9+ciudad+te+interesa%3F+&parse_mode=Markdown HTTP/1.1" 200 269
+DEBUG 13:50:55,479 urllib3.connectionpool https://api.telegram.org:443 "GET /bot6801086874:AAHeCvum2Rsh0API-nEK41vzuO7zCRR3_KY/getUpdates?offset=780538076&timeout=20 HTTP/1.1" 200 300
+INFO 13:50:55,480 root El usuario selecciono la ciudad Mar del Plata
+DEBUG 13:50:55,550 urllib3.util.retry Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+DEBUG 13:50:55,551 urllib3.util.retry Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+DEBUG 13:50:55,551 geopy Nominatim.geocode: https://nominatim.openstreetmap.org/search?q=Mar+del+Plata&format=json&limit=1
+DEBUG 13:50:55,552 urllib3.connectionpool Starting new HTTPS connection (1): nominatim.openstreetmap.org:443
+DEBUG 13:50:56,290 urllib3.connectionpool https://nominatim.openstreetmap.org:443 "GET /search?q=Mar+del+Plata&format=json&limit=1 HTTP/1.1" 200 445
+DEBUG 13:50:56,295 urllib3.connectionpool Starting new HTTPS connection (1): api.openweathermap.org:443
+DEBUG 13:50:57,78 urllib3.connectionpool https://api.openweathermap.org:443 "GET /data/2.5/forecast?lat=-34.53&lon=-54.06&units=metric&lang=es&appid=03073a99421b1d8b922aa51d4b1b9be8 HTTP/1.1" 200 16045
+DEBUG 13:50:57,494 urllib3.connectionpool https://api.telegram.org:443 "POST /bot6801086874:AAHeCvum2Rsh0API-nEK41vzuO7zCRR3_KY/sendMessage?chat_id=7154709471&text=Ah%C3%AD+est%C3%A1+el+clima%21 HTTP/1.1" 200 263
+DEBUG 13:50:57,912 urllib3.connectionpool https://api.telegram.org:443 "POST /bot6801086874:AAHeCvum2Rsh0API-nEK41vzuO7zCRR3_KY/sendMessage?chat_id=7154709471&text=%2ATemperatura+de+hoy+ser%C3%A1%3A%2A+12.25%C2%B0C%0A+%2ASensaci%C3%B3n+t%C3%A9rmica%3A%2A+11.85%C2%B0C%0A+%2ATemperatura+m%C3%A1xima%3A%2A+12.25%C2%B0C%0A+%2ATemperatura+m%C3%ADnima%3A%2A+12.25%C2%B0C%0A+%2ADescripci%C3%B3n%3A%2A+cielo+claro%0A&parse_mode=Markdown HTTP/1.1" 200 646
+DEBUG 13:50:58,341 urllib3.connectionpool https://api.telegram.org:443 "POST /bot6801086874:AAHeCvum2Rsh0API-nEK41vzuO7zCRR3_KY/sendPhoto?chat_id=7154709471&photo=https%3A%2F%2Fopenweathermap.org%2Fimg%2Fwn%2F10n%402x.png HTTP/1.1" 200 584
+DEBUG 13:51:15,752 urllib3.connectionpool https://api.telegram.org:443 "GET /bot6801086874:AAHeCvum2Rsh0API-nEK41vzuO7zCRR3_KY/getUpdates?offset=780538077&timeout=20 HTTP/1.1" 200 23
